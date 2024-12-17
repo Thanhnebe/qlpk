@@ -1,0 +1,289 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{58DACC7D-0AD7-438E-8C31-C0B49B01B47F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ClinicManagement</RootNamespace>
+    <AssemblyName>ClinicManagement</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClinicForm\ClinicCRUDBaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClinicForm\ClinicCRUDCompositeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClinicForm\DiseaseDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClinicForm\DiseaseDetailForm.Designer.cs">
+      <DependentUpon>DiseaseDetailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClinicForm\DiseaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClinicForm\DiseaseForm.Designer.cs">
+      <DependentUpon>DiseaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClinicForm\DoctorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClinicForm\DoctorForm.Designer.cs">
+      <DependentUpon>DoctorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClinicForm\HealthcareFacilityDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClinicForm\HealthcareFacilityDetailForm.Designer.cs">
+      <DependentUpon>HealthcareFacilityDetailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClinicForm\HealthcareFacilityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClinicForm\HealthcareFacilityForm.Designer.cs">
+      <DependentUpon>HealthcareFacilityForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClinicForm\MedicineDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClinicForm\MedicineDetailForm.Designer.cs">
+      <DependentUpon>MedicineDetailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClinicForm\MedicineForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClinicForm\MedicineForm.Designer.cs">
+      <DependentUpon>MedicineForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClinicForm\PatientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClinicForm\PatientForm.Designer.cs">
+      <DependentUpon>PatientForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClinicForm\PaymentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClinicForm\PaymentForm.Designer.cs">
+      <DependentUpon>PaymentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClinicForm\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClinicForm\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClinicForm\Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClinicForm\Register.Designer.cs">
+      <DependentUpon>Register.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClinicForm\StatisticForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClinicForm\StatisticForm.Designer.cs">
+      <DependentUpon>StatisticForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClinicForm\TreatmentRequestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClinicForm\TreatmentRequestForm.Designer.cs">
+      <DependentUpon>TreatmentRequestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ClinicForm\DiseaseDetailForm.resx">
+      <DependentUpon>DiseaseDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClinicForm\DiseaseForm.resx">
+      <DependentUpon>DiseaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClinicForm\DoctorForm.resx">
+      <DependentUpon>DoctorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClinicForm\HealthcareFacilityDetailForm.resx">
+      <DependentUpon>HealthcareFacilityDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClinicForm\HealthcareFacilityForm.resx">
+      <DependentUpon>HealthcareFacilityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClinicForm\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClinicForm\MedicineDetailForm.resx">
+      <DependentUpon>MedicineDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClinicForm\MedicineForm.resx">
+      <DependentUpon>MedicineForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClinicForm\PatientForm.resx">
+      <DependentUpon>PatientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClinicForm\PaymentForm.resx">
+      <DependentUpon>PaymentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClinicForm\Register.resx">
+      <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClinicForm\StatisticForm.resx">
+      <DependentUpon>StatisticForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClinicForm\TreatmentRequestForm.resx">
+      <DependentUpon>TreatmentRequestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="PresentationClassDiagram.cd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLogic\BusinessLogic.csproj">
+      <Project>{0DB92E9C-18FD-46CA-9D43-98656B5FAD62}</Project>
+      <Name>BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+      <Project>{C128F318-83A6-4477-A2A0-EFDDE6E31CE7}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>

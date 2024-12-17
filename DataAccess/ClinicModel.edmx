@@ -1,0 +1,744 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ClinicModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BacSi">
+          <Key>
+            <PropertyRef Name="MaBacSi" />
+          </Key>
+          <Property Name="MaBacSi" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HoTen" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="NamSinh" Type="date" Nullable="false" />
+          <Property Name="GioiTinh" Type="bit" Nullable="false" />
+          <Property Name="DiaChi" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="SoDienThoai" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="CMND" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="TrinhDo" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="ChuyenNganh" Type="nvarchar" MaxLength="70" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Benh">
+          <Key>
+            <PropertyRef Name="MaBenh" />
+          </Key>
+          <Property Name="MaBenh" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenBenh" Type="nvarchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BenhNhan">
+          <Key>
+            <PropertyRef Name="MaBenhNhan" />
+          </Key>
+          <Property Name="MaBenhNhan" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HoTen" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="NamSinh" Type="date" Nullable="false" />
+          <Property Name="GioiTinh" Type="bit" Nullable="false" />
+          <Property Name="DiaChi" Type="nvarchar" MaxLength="255" />
+          <Property Name="SoDienThoai" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="CMND" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="ChiTietBenh">
+          <Key>
+            <PropertyRef Name="MaPhieuKhamChuaBenh" />
+            <PropertyRef Name="MaBenh" />
+          </Key>
+          <Property Name="MaPhieuKhamChuaBenh" Type="bigint" Nullable="false" />
+          <Property Name="MaBenh" Type="bigint" Nullable="false" />
+          <Property Name="NgayChuanDoan" Type="datetime" Nullable="false" />
+          <Property Name="PhuongPhapDieuTri" Type="ntext" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ChiTietDichVuKhamChuaBenh">
+          <Key>
+            <PropertyRef Name="MaPhieuKhamChuaBenh" />
+            <PropertyRef Name="MaDichVuKhamChuaBenh" />
+          </Key>
+          <Property Name="MaPhieuKhamChuaBenh" Type="bigint" Nullable="false" />
+          <Property Name="MaDichVuKhamChuaBenh" Type="bigint" Nullable="false" />
+          <Property Name="NgayDangKy" Type="datetime" Nullable="false" />
+          <Property Name="DonGiaHienTai" Type="decimal" Precision="15" Scale="2" Nullable="false" />
+          <Property Name="SoLuong" Type="int" Nullable="false" />
+          <Property Name="GhiChu" Type="ntext" />
+        </EntityType>
+        <EntityType Name="ChiTietDonThuoc">
+          <Key>
+            <PropertyRef Name="MaPhieuKhamChuaBenh" />
+            <PropertyRef Name="MaThuoc" />
+          </Key>
+          <Property Name="MaPhieuKhamChuaBenh" Type="bigint" Nullable="false" />
+          <Property Name="MaThuoc" Type="bigint" Nullable="false" />
+          <Property Name="SoLuong" Type="int" Nullable="false" />
+          <Property Name="DonGiaHienTai" Type="decimal" Precision="15" Scale="2" Nullable="false" />
+          <Property Name="HuongDanSuDung" Type="ntext" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DichVuKhamChuaBenh">
+          <Key>
+            <PropertyRef Name="MaDichVuKhamChuaBenh" />
+          </Key>
+          <Property Name="MaDichVuKhamChuaBenh" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenDichVuKhamChuaBenh" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="DonGia" Type="decimal" Precision="15" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PhieuKhamChuaBenh">
+          <Key>
+            <PropertyRef Name="MaPhieuKhamChuaBenh" />
+          </Key>
+          <Property Name="MaPhieuKhamChuaBenh" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MaBenhNhan" Type="bigint" Nullable="false" />
+          <Property Name="MaBacSi" Type="bigint" Nullable="false" />
+          <Property Name="NgayDangKy" Type="datetime" Nullable="false" />
+          <Property Name="GhiChu" Type="ntext" />
+        </EntityType>
+        <EntityType Name="ThanhToan">
+          <Key>
+            <PropertyRef Name="MaThanhToan" />
+          </Key>
+          <Property Name="MaThanhToan" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MaPhieuKhamChuaBenh" Type="bigint" Nullable="false" />
+          <Property Name="NgayThanhToan" Type="datetime" Nullable="false" />
+          <Property Name="SoTien" Type="decimal" Precision="15" Scale="2" Nullable="false" />
+          <Property Name="GhiChu" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Thuoc">
+          <Key>
+            <PropertyRef Name="MaThuoc" />
+          </Key>
+          <Property Name="MaThuoc" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenThuoc" Type="nvarchar" MaxLength="45" Nullable="false" />
+          <Property Name="HuongDanSuDung" Type="ntext" Nullable="false" />
+          <Property Name="DonGia" Type="decimal" Precision="15" Scale="2" Nullable="false" />
+          <Property Name="SoLuongTon" Type="int" Nullable="false" />
+          <Property Name="DonViTinh" Type="nvarchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="PasswordHash" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="CreatedAt" Type="datetime" />
+        </EntityType>
+        <Association Name="FK__ChiTietBe__MaBen__5629CD9C">
+          <End Role="Benh" Type="Self.Benh" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ChiTietBenh" Type="Self.ChiTietBenh" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Benh">
+              <PropertyRef Name="MaBenh" />
+            </Principal>
+            <Dependent Role="ChiTietBenh">
+              <PropertyRef Name="MaBenh" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ChiTietBe__MaPhi__5535A963">
+          <End Role="PhieuKhamChuaBenh" Type="Self.PhieuKhamChuaBenh" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ChiTietBenh" Type="Self.ChiTietBenh" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PhieuKhamChuaBenh">
+              <PropertyRef Name="MaPhieuKhamChuaBenh" />
+            </Principal>
+            <Dependent Role="ChiTietBenh">
+              <PropertyRef Name="MaPhieuKhamChuaBenh" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ChiTietDi__MaDic__628FA481">
+          <End Role="DichVuKhamChuaBenh" Type="Self.DichVuKhamChuaBenh" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ChiTietDichVuKhamChuaBenh" Type="Self.ChiTietDichVuKhamChuaBenh" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DichVuKhamChuaBenh">
+              <PropertyRef Name="MaDichVuKhamChuaBenh" />
+            </Principal>
+            <Dependent Role="ChiTietDichVuKhamChuaBenh">
+              <PropertyRef Name="MaDichVuKhamChuaBenh" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ChiTietDi__MaPhi__619B8048">
+          <End Role="PhieuKhamChuaBenh" Type="Self.PhieuKhamChuaBenh" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ChiTietDichVuKhamChuaBenh" Type="Self.ChiTietDichVuKhamChuaBenh" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PhieuKhamChuaBenh">
+              <PropertyRef Name="MaPhieuKhamChuaBenh" />
+            </Principal>
+            <Dependent Role="ChiTietDichVuKhamChuaBenh">
+              <PropertyRef Name="MaPhieuKhamChuaBenh" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ChiTietDo__MaPhi__59063A47">
+          <End Role="PhieuKhamChuaBenh" Type="Self.PhieuKhamChuaBenh" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ChiTietDonThuoc" Type="Self.ChiTietDonThuoc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PhieuKhamChuaBenh">
+              <PropertyRef Name="MaPhieuKhamChuaBenh" />
+            </Principal>
+            <Dependent Role="ChiTietDonThuoc">
+              <PropertyRef Name="MaPhieuKhamChuaBenh" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ChiTietDo__MaThu__59FA5E80">
+          <End Role="Thuoc" Type="Self.Thuoc" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ChiTietDonThuoc" Type="Self.ChiTietDonThuoc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Thuoc">
+              <PropertyRef Name="MaThuoc" />
+            </Principal>
+            <Dependent Role="ChiTietDonThuoc">
+              <PropertyRef Name="MaThuoc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PhieuKham__MaBac__52593CB8">
+          <End Role="BacSi" Type="Self.BacSi" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PhieuKhamChuaBenh" Type="Self.PhieuKhamChuaBenh" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BacSi">
+              <PropertyRef Name="MaBacSi" />
+            </Principal>
+            <Dependent Role="PhieuKhamChuaBenh">
+              <PropertyRef Name="MaBacSi" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PhieuKham__MaBen__5165187F">
+          <End Role="BenhNhan" Type="Self.BenhNhan" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PhieuKhamChuaBenh" Type="Self.PhieuKhamChuaBenh" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BenhNhan">
+              <PropertyRef Name="MaBenhNhan" />
+            </Principal>
+            <Dependent Role="PhieuKhamChuaBenh">
+              <PropertyRef Name="MaBenhNhan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ThanhToan__MaPhi__5EBF139D">
+          <End Role="PhieuKhamChuaBenh" Type="Self.PhieuKhamChuaBenh" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ThanhToan" Type="Self.ThanhToan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PhieuKhamChuaBenh">
+              <PropertyRef Name="MaPhieuKhamChuaBenh" />
+            </Principal>
+            <Dependent Role="ThanhToan">
+              <PropertyRef Name="MaPhieuKhamChuaBenh" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ClinicModelStoreContainer">
+          <EntitySet Name="BacSi" EntityType="Self.BacSi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Benh" EntityType="Self.Benh" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BenhNhan" EntityType="Self.BenhNhan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ChiTietBenh" EntityType="Self.ChiTietBenh" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ChiTietDichVuKhamChuaBenh" EntityType="Self.ChiTietDichVuKhamChuaBenh" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ChiTietDonThuoc" EntityType="Self.ChiTietDonThuoc" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DichVuKhamChuaBenh" EntityType="Self.DichVuKhamChuaBenh" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PhieuKhamChuaBenh" EntityType="Self.PhieuKhamChuaBenh" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ThanhToan" EntityType="Self.ThanhToan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Thuoc" EntityType="Self.Thuoc" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__ChiTietBe__MaBen__5629CD9C" Association="Self.FK__ChiTietBe__MaBen__5629CD9C">
+            <End Role="Benh" EntitySet="Benh" />
+            <End Role="ChiTietBenh" EntitySet="ChiTietBenh" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ChiTietBe__MaPhi__5535A963" Association="Self.FK__ChiTietBe__MaPhi__5535A963">
+            <End Role="PhieuKhamChuaBenh" EntitySet="PhieuKhamChuaBenh" />
+            <End Role="ChiTietBenh" EntitySet="ChiTietBenh" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ChiTietDi__MaDic__628FA481" Association="Self.FK__ChiTietDi__MaDic__628FA481">
+            <End Role="DichVuKhamChuaBenh" EntitySet="DichVuKhamChuaBenh" />
+            <End Role="ChiTietDichVuKhamChuaBenh" EntitySet="ChiTietDichVuKhamChuaBenh" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ChiTietDi__MaPhi__619B8048" Association="Self.FK__ChiTietDi__MaPhi__619B8048">
+            <End Role="PhieuKhamChuaBenh" EntitySet="PhieuKhamChuaBenh" />
+            <End Role="ChiTietDichVuKhamChuaBenh" EntitySet="ChiTietDichVuKhamChuaBenh" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ChiTietDo__MaPhi__59063A47" Association="Self.FK__ChiTietDo__MaPhi__59063A47">
+            <End Role="PhieuKhamChuaBenh" EntitySet="PhieuKhamChuaBenh" />
+            <End Role="ChiTietDonThuoc" EntitySet="ChiTietDonThuoc" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ChiTietDo__MaThu__59FA5E80" Association="Self.FK__ChiTietDo__MaThu__59FA5E80">
+            <End Role="Thuoc" EntitySet="Thuoc" />
+            <End Role="ChiTietDonThuoc" EntitySet="ChiTietDonThuoc" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PhieuKham__MaBac__52593CB8" Association="Self.FK__PhieuKham__MaBac__52593CB8">
+            <End Role="BacSi" EntitySet="BacSi" />
+            <End Role="PhieuKhamChuaBenh" EntitySet="PhieuKhamChuaBenh" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PhieuKham__MaBen__5165187F" Association="Self.FK__PhieuKham__MaBen__5165187F">
+            <End Role="BenhNhan" EntitySet="BenhNhan" />
+            <End Role="PhieuKhamChuaBenh" EntitySet="PhieuKhamChuaBenh" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ThanhToan__MaPhi__5EBF139D" Association="Self.FK__ThanhToan__MaPhi__5EBF139D">
+            <End Role="PhieuKhamChuaBenh" EntitySet="PhieuKhamChuaBenh" />
+            <End Role="ThanhToan" EntitySet="ThanhToan" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ClinicModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Doctor">
+          <Key>
+            <PropertyRef Name="DoctorId" />
+          </Key>
+          <Property Name="DoctorId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Birthday" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Sex" Type="Boolean" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IdentityNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Degree" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Major" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="TreatmentRequests" Relationship="Self.FK__PhieuKham__MaBac__52593CB8" FromRole="BacSi" ToRole="PhieuKhamChuaBenh" />
+        </EntityType>
+        <EntityType Name="Disease">
+          <Key>
+            <PropertyRef Name="DiseaseId" />
+          </Key>
+          <Property Name="DiseaseId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DiseaseName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="DiseaseDetails" Relationship="Self.FK__ChiTietBe__MaBen__5629CD9C" FromRole="Benh" ToRole="ChiTietBenh" />
+        </EntityType>
+        <EntityType Name="Patient">
+          <Key>
+            <PropertyRef Name="PatientId" />
+          </Key>
+          <Property Name="PatientId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Birthday" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Sex" Type="Boolean" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IdentityNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TreatmentRequests" Relationship="Self.FK__PhieuKham__MaBen__5165187F" FromRole="BenhNhan" ToRole="PhieuKhamChuaBenh" />
+        </EntityType>
+        <EntityType Name="DiseaseDetail">
+          <Key>
+            <PropertyRef Name="DiseaseId" />
+            <PropertyRef Name="TreatmentRequestId" />
+          </Key>
+          <Property Name="TreatmentRequestId" Type="Int64" Nullable="false" />
+          <Property Name="DiseaseId" Type="Int64" Nullable="false" />
+          <Property Name="TreatmentDate" Type="DateTime" Precision="3" Nullable="false" />
+          <Property Name="TreatmentMethod" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Disease" Relationship="Self.FK__ChiTietBe__MaBen__5629CD9C" FromRole="ChiTietBenh" ToRole="Benh" />
+          <NavigationProperty Name="TreatmentRequest" Relationship="Self.FK__ChiTietBe__MaPhi__5535A963" FromRole="ChiTietBenh" ToRole="PhieuKhamChuaBenh" />
+        </EntityType>
+        <EntityType Name="HealthcareFacilityDetail">
+          <Key>
+            <PropertyRef Name="TreatmentRequestId" />
+            <PropertyRef Name="HealthcareFacilityId" />
+          </Key>
+          <Property Name="TreatmentRequestId" Type="Int64" Nullable="false" />
+          <Property Name="HealthcareFacilityId" Type="Int64" Nullable="false" />
+          <Property Name="RegisterDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Price" Type="Decimal" Precision="15" Scale="2" Nullable="false" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="HealthcareFacility" Relationship="Self.FK__ChiTietDi__MaDic__628FA481" FromRole="ChiTietDichVuKhamChuaBenh" ToRole="DichVuKhamChuaBenh" />
+          <NavigationProperty Name="TreatmentRequest" Relationship="Self.FK__ChiTietDi__MaPhi__619B8048" FromRole="ChiTietDichVuKhamChuaBenh" ToRole="PhieuKhamChuaBenh" />
+        </EntityType>
+        <EntityType Name="MedicineDetail">
+          <Key>
+            <PropertyRef Name="TreatmentRequestId" />
+            <PropertyRef Name="MedicineId" />
+          </Key>
+          <Property Name="TreatmentRequestId" Type="Int64" Nullable="false" />
+          <Property Name="MedicineId" Type="Int64" Nullable="false" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Precision="15" Scale="2" Nullable="false" />
+          <Property Name="Usage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="TreatmentRequest" Relationship="Self.FK__ChiTietDo__MaPhi__59063A47" FromRole="ChiTietDonThuoc" ToRole="PhieuKhamChuaBenh" />
+          <NavigationProperty Name="Medicine" Relationship="Self.FK__ChiTietDo__MaThu__59FA5E80" FromRole="ChiTietDonThuoc" ToRole="Thuoc" />
+        </EntityType>
+        <EntityType Name="HealthcareFacility">
+          <Key>
+            <PropertyRef Name="HealthcareFacilityId" />
+          </Key>
+          <Property Name="HealthcareFacilityId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Precision="15" Scale="2" Nullable="false" />
+          <NavigationProperty Name="HealthcareFacilityDetails" Relationship="Self.FK__ChiTietDi__MaDic__628FA481" FromRole="DichVuKhamChuaBenh" ToRole="ChiTietDichVuKhamChuaBenh" />
+        </EntityType>
+        <EntityType Name="TreatmentRequest">
+          <Key>
+            <PropertyRef Name="TreatmentRequestId" />
+          </Key>
+          <Property Name="TreatmentRequestId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PatientId" Type="Int64" Nullable="false" />
+          <Property Name="DoctorId" Type="Int64" Nullable="false" />
+          <Property Name="RegisterDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Doctor" Relationship="Self.FK__PhieuKham__MaBac__52593CB8" FromRole="PhieuKhamChuaBenh" ToRole="BacSi" />
+          <NavigationProperty Name="Patient" Relationship="Self.FK__PhieuKham__MaBen__5165187F" FromRole="PhieuKhamChuaBenh" ToRole="BenhNhan" />
+          <NavigationProperty Name="DiseaseDetails" Relationship="Self.FK__ChiTietBe__MaPhi__5535A963" FromRole="PhieuKhamChuaBenh" ToRole="ChiTietBenh" />
+          <NavigationProperty Name="HealthcareFacilityDetails" Relationship="Self.FK__ChiTietDi__MaPhi__619B8048" FromRole="PhieuKhamChuaBenh" ToRole="ChiTietDichVuKhamChuaBenh" />
+          <NavigationProperty Name="MedicineDetails" Relationship="Self.FK__ChiTietDo__MaPhi__59063A47" FromRole="PhieuKhamChuaBenh" ToRole="ChiTietDonThuoc" />
+          <NavigationProperty Name="Payments" Relationship="Self.FK__ThanhToan__MaPhi__5EBF139D" FromRole="PhieuKhamChuaBenh" ToRole="ThanhToan" />
+        </EntityType>
+        <EntityType Name="Payment">
+          <Key>
+            <PropertyRef Name="PaymentId" />
+          </Key>
+          <Property Name="PaymentId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TreatmentRequestId" Type="Int64" Nullable="false" />
+          <Property Name="PayDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="AmountMoney" Type="Decimal" Precision="15" Scale="2" Nullable="false" />
+          <Property Name="Note" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TreatmentRequest" Relationship="Self.FK__ThanhToan__MaPhi__5EBF139D" FromRole="ThanhToan" ToRole="PhieuKhamChuaBenh" />
+        </EntityType>
+        <EntityType Name="Medicine">
+          <Key>
+            <PropertyRef Name="MedicineId" />
+          </Key>
+          <Property Name="MedicineId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MedicineName" Type="String" MaxLength="45" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Usage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Precision="15" Scale="2" Nullable="false" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="Unit" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="MedicineDetails" Relationship="Self.FK__ChiTietDo__MaThu__59FA5E80" FromRole="Thuoc" ToRole="ChiTietDonThuoc" />
+        </EntityType>
+        <Association Name="FK__PhieuKham__MaBac__52593CB8">
+          <End Role="BacSi" Type="ClinicModel.Doctor" Multiplicity="1" />
+          <End Role="PhieuKhamChuaBenh" Type="ClinicModel.TreatmentRequest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BacSi">
+              <PropertyRef Name="DoctorId" />
+            </Principal>
+            <Dependent Role="PhieuKhamChuaBenh">
+              <PropertyRef Name="DoctorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ChiTietBe__MaBen__5629CD9C">
+          <End Role="Benh" Type="ClinicModel.Disease" Multiplicity="1" />
+          <End Role="ChiTietBenh" Type="ClinicModel.DiseaseDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Benh">
+              <PropertyRef Name="DiseaseId" />
+            </Principal>
+            <Dependent Role="ChiTietBenh">
+              <PropertyRef Name="DiseaseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PhieuKham__MaBen__5165187F">
+          <End Role="BenhNhan" Type="ClinicModel.Patient" Multiplicity="1" />
+          <End Role="PhieuKhamChuaBenh" Type="ClinicModel.TreatmentRequest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BenhNhan">
+              <PropertyRef Name="PatientId" />
+            </Principal>
+            <Dependent Role="PhieuKhamChuaBenh">
+              <PropertyRef Name="PatientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ChiTietBe__MaPhi__5535A963">
+          <End Role="PhieuKhamChuaBenh" Type="ClinicModel.TreatmentRequest" Multiplicity="1" />
+          <End Role="ChiTietBenh" Type="ClinicModel.DiseaseDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PhieuKhamChuaBenh">
+              <PropertyRef Name="TreatmentRequestId" />
+            </Principal>
+            <Dependent Role="ChiTietBenh">
+              <PropertyRef Name="TreatmentRequestId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ChiTietDi__MaDic__628FA481">
+          <End Role="DichVuKhamChuaBenh" Type="ClinicModel.HealthcareFacility" Multiplicity="1" />
+          <End Role="ChiTietDichVuKhamChuaBenh" Type="ClinicModel.HealthcareFacilityDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DichVuKhamChuaBenh">
+              <PropertyRef Name="HealthcareFacilityId" />
+            </Principal>
+            <Dependent Role="ChiTietDichVuKhamChuaBenh">
+              <PropertyRef Name="HealthcareFacilityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ChiTietDi__MaPhi__619B8048">
+          <End Role="PhieuKhamChuaBenh" Type="ClinicModel.TreatmentRequest" Multiplicity="1" />
+          <End Role="ChiTietDichVuKhamChuaBenh" Type="ClinicModel.HealthcareFacilityDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PhieuKhamChuaBenh">
+              <PropertyRef Name="TreatmentRequestId" />
+            </Principal>
+            <Dependent Role="ChiTietDichVuKhamChuaBenh">
+              <PropertyRef Name="TreatmentRequestId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ChiTietDo__MaPhi__59063A47">
+          <End Role="PhieuKhamChuaBenh" Type="ClinicModel.TreatmentRequest" Multiplicity="1" />
+          <End Role="ChiTietDonThuoc" Type="ClinicModel.MedicineDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PhieuKhamChuaBenh">
+              <PropertyRef Name="TreatmentRequestId" />
+            </Principal>
+            <Dependent Role="ChiTietDonThuoc">
+              <PropertyRef Name="TreatmentRequestId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ChiTietDo__MaThu__59FA5E80">
+          <End Role="Thuoc" Type="ClinicModel.Medicine" Multiplicity="1" />
+          <End Role="ChiTietDonThuoc" Type="ClinicModel.MedicineDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Thuoc">
+              <PropertyRef Name="MedicineId" />
+            </Principal>
+            <Dependent Role="ChiTietDonThuoc">
+              <PropertyRef Name="MedicineId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ThanhToan__MaPhi__5EBF139D">
+          <End Role="PhieuKhamChuaBenh" Type="ClinicModel.TreatmentRequest" Multiplicity="1" />
+          <End Role="ThanhToan" Type="ClinicModel.Payment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PhieuKhamChuaBenh">
+              <PropertyRef Name="TreatmentRequestId" />
+            </Principal>
+            <Dependent Role="ThanhToan">
+              <PropertyRef Name="TreatmentRequestId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ClinicEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Doctors" EntityType="ClinicModel.Doctor" />
+          <EntitySet Name="Diseases" EntityType="ClinicModel.Disease" />
+          <EntitySet Name="Patients" EntityType="ClinicModel.Patient" />
+          <EntitySet Name="DiseaseDetails" EntityType="ClinicModel.DiseaseDetail" />
+          <EntitySet Name="HealthcareFacilityDetails" EntityType="ClinicModel.HealthcareFacilityDetail" />
+          <EntitySet Name="MedicineDetails" EntityType="ClinicModel.MedicineDetail" />
+          <EntitySet Name="HealthcareFacilities" EntityType="ClinicModel.HealthcareFacility" />
+          <EntitySet Name="TreatmentRequests" EntityType="ClinicModel.TreatmentRequest" />
+          <EntitySet Name="Payments" EntityType="ClinicModel.Payment" />
+          <EntitySet Name="Medicines" EntityType="ClinicModel.Medicine" />
+          <AssociationSet Name="FK__PhieuKham__MaBac__52593CB8" Association="Self.FK__PhieuKham__MaBac__52593CB8">
+            <End Role="BacSi" EntitySet="Doctors" />
+            <End Role="PhieuKhamChuaBenh" EntitySet="TreatmentRequests" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ChiTietBe__MaBen__5629CD9C" Association="Self.FK__ChiTietBe__MaBen__5629CD9C">
+            <End Role="Benh" EntitySet="Diseases" />
+            <End Role="ChiTietBenh" EntitySet="DiseaseDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PhieuKham__MaBen__5165187F" Association="Self.FK__PhieuKham__MaBen__5165187F">
+            <End Role="BenhNhan" EntitySet="Patients" />
+            <End Role="PhieuKhamChuaBenh" EntitySet="TreatmentRequests" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ChiTietBe__MaPhi__5535A963" Association="Self.FK__ChiTietBe__MaPhi__5535A963">
+            <End Role="PhieuKhamChuaBenh" EntitySet="TreatmentRequests" />
+            <End Role="ChiTietBenh" EntitySet="DiseaseDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ChiTietDi__MaDic__628FA481" Association="Self.FK__ChiTietDi__MaDic__628FA481">
+            <End Role="DichVuKhamChuaBenh" EntitySet="HealthcareFacilities" />
+            <End Role="ChiTietDichVuKhamChuaBenh" EntitySet="HealthcareFacilityDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ChiTietDi__MaPhi__619B8048" Association="Self.FK__ChiTietDi__MaPhi__619B8048">
+            <End Role="PhieuKhamChuaBenh" EntitySet="TreatmentRequests" />
+            <End Role="ChiTietDichVuKhamChuaBenh" EntitySet="HealthcareFacilityDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ChiTietDo__MaPhi__59063A47" Association="Self.FK__ChiTietDo__MaPhi__59063A47">
+            <End Role="PhieuKhamChuaBenh" EntitySet="TreatmentRequests" />
+            <End Role="ChiTietDonThuoc" EntitySet="MedicineDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ChiTietDo__MaThu__59FA5E80" Association="Self.FK__ChiTietDo__MaThu__59FA5E80">
+            <End Role="Thuoc" EntitySet="Medicines" />
+            <End Role="ChiTietDonThuoc" EntitySet="MedicineDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ThanhToan__MaPhi__5EBF139D" Association="Self.FK__ThanhToan__MaPhi__5EBF139D">
+            <End Role="PhieuKhamChuaBenh" EntitySet="TreatmentRequests" />
+            <End Role="ThanhToan" EntitySet="Payments" />
+          </AssociationSet>
+          <EntitySet Name="Users" EntityType="ClinicModel.User" />
+        </EntityContainer>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PasswordHash" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ClinicModelStoreContainer" CdmEntityContainer="ClinicEntities">
+          <EntitySetMapping Name="Doctors">
+            <EntityTypeMapping TypeName="ClinicModel.Doctor">
+              <MappingFragment StoreEntitySet="BacSi">
+                <ScalarProperty Name="Name" ColumnName="HoTen" />
+                <ScalarProperty Name="DoctorId" ColumnName="MaBacSi" />
+                <ScalarProperty Name="Birthday" ColumnName="NamSinh" />
+                <ScalarProperty Name="Sex" ColumnName="GioiTinh" />
+                <ScalarProperty Name="Address" ColumnName="DiaChi" />
+                <ScalarProperty Name="Phone" ColumnName="SoDienThoai" />
+                <ScalarProperty Name="IdentityNumber" ColumnName="CMND" />
+                <ScalarProperty Name="Degree" ColumnName="TrinhDo" />
+                <ScalarProperty Name="Major" ColumnName="ChuyenNganh" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Diseases">
+            <EntityTypeMapping TypeName="ClinicModel.Disease">
+              <MappingFragment StoreEntitySet="Benh">
+                <ScalarProperty Name="DiseaseId" ColumnName="MaBenh" />
+                <ScalarProperty Name="DiseaseName" ColumnName="TenBenh" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Patients">
+            <EntityTypeMapping TypeName="ClinicModel.Patient">
+              <MappingFragment StoreEntitySet="BenhNhan">
+                <ScalarProperty Name="PatientId" ColumnName="MaBenhNhan" />
+                <ScalarProperty Name="Name" ColumnName="HoTen" />
+                <ScalarProperty Name="Birthday" ColumnName="NamSinh" />
+                <ScalarProperty Name="Sex" ColumnName="GioiTinh" />
+                <ScalarProperty Name="Address" ColumnName="DiaChi" />
+                <ScalarProperty Name="Phone" ColumnName="SoDienThoai" />
+                <ScalarProperty Name="IdentityNumber" ColumnName="CMND" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DiseaseDetails">
+            <EntityTypeMapping TypeName="ClinicModel.DiseaseDetail">
+              <MappingFragment StoreEntitySet="ChiTietBenh">
+                <ScalarProperty Name="TreatmentRequestId" ColumnName="MaPhieuKhamChuaBenh" />
+                <ScalarProperty Name="DiseaseId" ColumnName="MaBenh" />
+                <ScalarProperty Name="TreatmentDate" ColumnName="NgayChuanDoan" />
+                <ScalarProperty Name="TreatmentMethod" ColumnName="PhuongPhapDieuTri" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HealthcareFacilityDetails">
+            <EntityTypeMapping TypeName="ClinicModel.HealthcareFacilityDetail">
+              <MappingFragment StoreEntitySet="ChiTietDichVuKhamChuaBenh">
+                <ScalarProperty Name="TreatmentRequestId" ColumnName="MaPhieuKhamChuaBenh" />
+                <ScalarProperty Name="HealthcareFacilityId" ColumnName="MaDichVuKhamChuaBenh" />
+                <ScalarProperty Name="RegisterDate" ColumnName="NgayDangKy" />
+                <ScalarProperty Name="Price" ColumnName="DonGiaHienTai" />
+                <ScalarProperty Name="Quantity" ColumnName="SoLuong" />
+                <ScalarProperty Name="Note" ColumnName="GhiChu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MedicineDetails">
+            <EntityTypeMapping TypeName="ClinicModel.MedicineDetail">
+              <MappingFragment StoreEntitySet="ChiTietDonThuoc">
+                <ScalarProperty Name="TreatmentRequestId" ColumnName="MaPhieuKhamChuaBenh" />
+                <ScalarProperty Name="MedicineId" ColumnName="MaThuoc" />
+                <ScalarProperty Name="Quantity" ColumnName="SoLuong" />
+                <ScalarProperty Name="Price" ColumnName="DonGiaHienTai" />
+                <ScalarProperty Name="Usage" ColumnName="HuongDanSuDung" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HealthcareFacilities">
+            <EntityTypeMapping TypeName="ClinicModel.HealthcareFacility">
+              <MappingFragment StoreEntitySet="DichVuKhamChuaBenh">
+                <ScalarProperty Name="HealthcareFacilityId" ColumnName="MaDichVuKhamChuaBenh" />
+                <ScalarProperty Name="Name" ColumnName="TenDichVuKhamChuaBenh" />
+                <ScalarProperty Name="Price" ColumnName="DonGia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TreatmentRequests">
+            <EntityTypeMapping TypeName="ClinicModel.TreatmentRequest">
+              <MappingFragment StoreEntitySet="PhieuKhamChuaBenh">
+                <ScalarProperty Name="TreatmentRequestId" ColumnName="MaPhieuKhamChuaBenh" />
+                <ScalarProperty Name="PatientId" ColumnName="MaBenhNhan" />
+                <ScalarProperty Name="DoctorId" ColumnName="MaBacSi" />
+                <ScalarProperty Name="RegisterDate" ColumnName="NgayDangKy" />
+                <ScalarProperty Name="Note" ColumnName="GhiChu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Payments">
+            <EntityTypeMapping TypeName="ClinicModel.Payment">
+              <MappingFragment StoreEntitySet="ThanhToan">
+                <ScalarProperty Name="PaymentId" ColumnName="MaThanhToan" />
+                <ScalarProperty Name="TreatmentRequestId" ColumnName="MaPhieuKhamChuaBenh" />
+                <ScalarProperty Name="PayDate" ColumnName="NgayThanhToan" />
+                <ScalarProperty Name="AmountMoney" ColumnName="SoTien" />
+                <ScalarProperty Name="Note" ColumnName="GhiChu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Medicines">
+            <EntityTypeMapping TypeName="ClinicModel.Medicine">
+              <MappingFragment StoreEntitySet="Thuoc">
+                <ScalarProperty Name="MedicineId" ColumnName="MaThuoc" />
+                <ScalarProperty Name="MedicineName" ColumnName="TenThuoc" />
+                <ScalarProperty Name="Usage" ColumnName="HuongDanSuDung" />
+                <ScalarProperty Name="Price" ColumnName="DonGia" />
+                <ScalarProperty Name="Quantity" ColumnName="SoLuongTon" />
+                <ScalarProperty Name="Unit" ColumnName="DonViTinh" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="ClinicModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

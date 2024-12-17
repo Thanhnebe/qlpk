@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DataAccess.ClinicEntities" Collapsed="true">
+    <Position X="10.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACEAAABQAAAAAACAAgAAEAIAAAAABgAAAAAACAA=</HashCode>
+      <FileName>ClinicModel.Context.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAccess.Disease">
+    <Position X="18.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAEAAAAAAAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Disease.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAccess.DiseaseDetail">
+    <Position X="20.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAEAAAAAEIAEAAAAAAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DiseaseDetail.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAccess.Doctor">
+    <Position X="22.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAQBAAAAAAAAAQQAAAKAAACAAAgIAAAAAA=</HashCode>
+      <FileName>Doctor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAccess.HealthcareFacility">
+    <Position X="20.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAQAAAAAAAAAAAAQAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>HealthcareFacility.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAccess.HealthcareFacilityDetail">
+    <Position X="24" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAEAAASAAAAAAAAAIAAAAAAAAAAAAAABAgAEAAAA=</HashCode>
+      <FileName>HealthcareFacilityDetail.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAccess.Medicine">
+    <Position X="25.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAQAAAAAAIAAAAAAEAAIAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Medicine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAccess.MedicineDetail">
+    <Position X="18.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAIAAEAAAQAAAAAAAAAAAAAEAAAAAAAAAAAAgAAACAA=</HashCode>
+      <FileName>MedicineDetail.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAccess.Patient">
+    <Position X="24" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAQAQBAAAAAAAAAQAAAAIAAACAAAAIAAAAAA=</HashCode>
+      <FileName>Patient.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAccess.Payment">
+    <Position X="22.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAEAgAAAAAAAAAAAAAAAAAAAAABAAAACAAAEAAAA=</HashCode>
+      <FileName>Payment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAccess.TreatmentRequest">
+    <Position X="25.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAGEAASBAAAAAAAAAAAAAAAICAAQAAAAAAAEACAA=</HashCode>
+      <FileName>TreatmentRequest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAccess.Repository.ClinicBaseRepository&lt;E&gt;">
+    <Position X="16" Y="5.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAgAAAAAgAAaAAgCEAEBAAAAEAAAAAAAEAA=</HashCode>
+      <FileName>Repository\ClinicBaseRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DataAccess.Repository.DiseaseDetailRepository" Collapsed="true">
+    <Position X="14.75" Y="11.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\DiseaseDetailRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAccess.Repository.DiseaseRepository" Collapsed="true">
+    <Position X="19.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\DiseaseRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAccess.Repository.DoctorRepository" Collapsed="true">
+    <Position X="23.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\DoctorRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAccess.Repository.HealthcareFacilityDetailRepository" Collapsed="true">
+    <Position X="4.75" Y="11.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAASAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\HealthcareFacilityDetailRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAccess.Repository.HealthcareFacilityRepository" Collapsed="true">
+    <Position X="10" Y="11.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\HealthcareFacilityRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAccess.Repository.MedicineDetailRepository" Collapsed="true">
+    <Position X="21.5" Y="11.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAAAASAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\MedicineDetailRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAccess.Repository.MedicineRepository" Collapsed="true">
+    <Position X="25.5" Y="11.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\MedicineRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAccess.Repository.PatientRepository" Collapsed="true">
+    <Position X="8" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\PatientRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAccess.Repository.PaymentRepository" Collapsed="true">
+    <Position X="12.5" Y="11.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEEAAAAAAACAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\PaymentRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAccess.Repository.TreatmentRequestRepository" Collapsed="true">
+    <Position X="17" Y="11.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAAAAASAAgAQAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\TreatmentRequestRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAccess.Utils.EntityUtils">
+    <Position X="10.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAABAAAAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>Utils\EntityUtils.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="DataAccess.Repository.IClinicRepository&lt;E&gt;">
+    <Position X="12.75" Y="5.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAgAAAAAgAAYAAACAAEBAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\IClinicRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

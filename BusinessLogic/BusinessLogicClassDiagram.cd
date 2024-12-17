@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BusinessLogic.Service.ClinicBaseService&lt;E&gt;">
+    <Position X="16.5" Y="1" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAYEAAAAAAgSAAAAgAAQAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Service\ClinicBaseService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BusinessLogic.Service.DiseaseDetailService" Collapsed="true">
+    <Position X="13.25" Y="6.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Service\DiseaseDetailService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusinessLogic.Service.DiseaseService" Collapsed="true">
+    <Position X="20" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Service\DiseaseService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusinessLogic.Service.DoctorService" Collapsed="true">
+    <Position X="24" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Service\DoctorService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusinessLogic.Service.HealthcareFacilityDetailService" Collapsed="true">
+    <Position X="6" Y="6.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAQAAAAAAAAAAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>Service\HealthcareFacilityDetailService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusinessLogic.Service.HealthcareFacilityService" Collapsed="true">
+    <Position X="15.5" Y="6.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Service\HealthcareFacilityService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusinessLogic.Service.MedicineDetailService" Collapsed="true">
+    <Position X="26" Y="6.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAQAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Service\MedicineDetailService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusinessLogic.Service.MedicineService" Collapsed="true">
+    <Position X="9" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Service\MedicineService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusinessLogic.Service.PatientService" Collapsed="true">
+    <Position X="18" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Service\PatientService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusinessLogic.Service.PaymentService" Collapsed="true">
+    <Position X="22" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAUAACAGAACABAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Service\PaymentService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusinessLogic.Service.StatisticService">
+    <Position X="20" Y="1" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAQAAAGAAACAGAAAAAAABAAEBAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Service\StatisticService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusinessLogic.Service.TreatmentRequestService" Collapsed="true">
+    <Position X="11" Y="6.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAEAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Service\TreatmentRequestService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="BusinessLogic.Service.IClinicService&lt;E&gt;">
+    <Position X="13.25" Y="1" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAgAAAAAgAAQAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Service\IClinicService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

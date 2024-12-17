@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ClinicManagement.ClinicForm.ClinicCRUDBaseForm&lt;E&gt;" Collapsed="true">
+    <Position X="12.25" Y="6.25" Width="2" />
+    <NestedTypes>
+      <Delegate Name="ClinicManagement.ClinicForm.ClinicCRUDBaseForm&lt;E&gt;.Consumer&lt;T&gt;" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>ClinicForm\ClinicCRUDBaseForm.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>IACALAIAAQAABggAAQQBFIAQACAIAAYAAEREECoAADA=</HashCode>
+      <FileName>ClinicForm\ClinicCRUDBaseForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClinicManagement.ClinicForm.ClinicCRUDCompositeForm&lt;E&gt;" Collapsed="true">
+    <Position X="12" Y="7.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAABAAAAABAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>ClinicForm\ClinicCRUDCompositeForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClinicManagement.ClinicForm.DiseaseDetailForm" Collapsed="true">
+    <Position X="12.25" Y="9.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>EAACAAAAAKAQABAQAICAAAACgAAAgAAAACEAgAABEAQ=</HashCode>
+      <FileName>ClinicForm\DiseaseDetailForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClinicManagement.ClinicForm.DiseaseForm" Collapsed="true">
+    <Position X="21.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAEAAACAQABAQAACAAAACAAAAwgAAACAAAAACgAY=</HashCode>
+      <FileName>ClinicForm\DiseaseForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClinicManagement.ClinicForm.DoctorForm" Collapsed="true">
+    <Position X="3.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>oAAEEwgAAKBbABKQAACAAAACAAAQgAAggCAACAACgAY=</HashCode>
+      <FileName>ClinicForm\DoctorForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClinicManagement.ClinicForm.HealthcareFacilityDetailForm" Collapsed="true">
+    <Position X="9.25" Y="9.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AgIACQBCACAQABIQCACAABACICAQgAAAASAAAAAAAAw=</HashCode>
+      <FileName>ClinicForm\HealthcareFacilityDetailForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClinicManagement.ClinicForm.HealthcareFacilityForm" Collapsed="true">
+    <Position X="18.75" Y="7.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAQBBAQAACAABACAAAQgAAAASAAAAACgA4=</HashCode>
+      <FileName>ClinicForm\HealthcareFacilityForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClinicManagement.ClinicForm.MedicineDetailForm" Collapsed="true">
+    <Position X="14.75" Y="9.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAIAAQAAACAQABAQAADBAAACAEAAgAAQAaAAAQAAAAw=</HashCode>
+      <FileName>ClinicForm\MedicineDetailForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClinicManagement.ClinicForm.MedicineForm" Collapsed="true">
+    <Position X="5.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIABwAAACAQABEQAACAAAACAEAAgAAAAaAEAQACAA4=</HashCode>
+      <FileName>ClinicForm\MedicineForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClinicManagement.ClinicForm.PatientForm" Collapsed="true">
+    <Position X="16.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>oAAEAggAACAbABKQAACAAAACAAAQgEQgACAAAAACgAY=</HashCode>
+      <FileName>ClinicForm\PatientForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClinicManagement.ClinicForm.PaymentForm" Collapsed="true">
+    <Position X="15.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgIAAADgAKABABAEAACCAAACAEAQAAAEgQAAAACAAAA=</HashCode>
+      <FileName>ClinicForm\PaymentForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClinicManagement.ClinicForm.StatisticForm" Collapsed="true">
+    <Position X="15.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgQAICAACAQABBAgACBAIACAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>ClinicForm\StatisticForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClinicManagement.ClinicForm.TreatmentRequestForm" Collapsed="true">
+    <Position X="7.75" Y="7.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>gkAAAAxIAGBQABgQCACIAAISACCggBQkACAAAAACAgY=</HashCode>
+      <FileName>ClinicForm\TreatmentRequestForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClinicManagement.MainForm" Collapsed="true">
+    <Position X="9.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAYMACAAAABAAACAAAACAIMAQAAgAIAAEAAAAQA=</HashCode>
+      <FileName>MainForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
